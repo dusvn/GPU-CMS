@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGraphicCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GraphicCard>
+    <Rtf_file>sda.rtf</Rtf_file>
+    <Image>C:\Users\dusan\OneDrive\Desktop\CP1\CP1\CP1\ProductImages\graphic_card_01.png</Image>
+    <Cena>1</Cena>
+    <Time>2023-03-26T20:38:24.9606047+02:00</Time>
+    <Name>marina kurva</Name>
+  </GraphicCard>
+  <GraphicCard>
+    <Rtf_file>sadsad.rtf</Rtf_file>
+    <Image>C:\Users\dusan\OneDrive\Desktop\CP1\CP1\CP1\ProductImages\graphic_card_02.png</Image>
+    <Cena>23</Cena>
+    <Time>2023-03-26T00:00:00</Time>
+    <Name>sadsad</Name>
+  </GraphicCard>
+</ArrayOfGraphicCard>

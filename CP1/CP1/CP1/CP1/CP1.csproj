@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\login.png" />
+    <None Remove="Images\loginIcon.png" />
+    <None Remove="RtBoxImages\Bold.png" />
+    <None Remove="RtBoxImages\Italic.png" />
+    <None Remove="RtBoxImages\Underline.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\loginIcon.png" />
+    <Resource Include="RtBoxImages\Bold.png" />
+    <Resource Include="RtBoxImages\Italic.png" />
+    <Resource Include="RtBoxImages\Underline.jpg" />
+  </ItemGroup>
+
+</Project>

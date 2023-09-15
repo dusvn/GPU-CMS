@@ -1,0 +1,89 @@
+﻿<Window x:Class="CP1.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP1"
+        mc:Ignorable="d"
+        Title="AdminWindow" 
+        Height="500" 
+        Width="800"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        Closing="Window_Closing"
+        >
+    <Border CornerRadius="25" BorderBrush="Black" BorderThickness="2" Padding="6">
+        <!--Rounding corners-->
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
+                <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                <GradientStop Color="DarkBlue" Offset="3"></GradientStop>
+            </LinearGradientBrush>
+        </Border.Background>
+        <StackPanel>
+            <!--Rounder button definition -->
+            <Button Name="ExitAdminWin" Margin="0 0 5 0"  Content="X" Background="#b01919" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="ExitAdminWin_Click" FontWeight="Bold">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="25"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Grid Margin="20 20 20 0" Height="350">
+              <!--Data Grid definition-->
+                <DataGrid x:Name="DataGridGraphicCards" ItemsSource="{Binding GraphicCards}" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="*" Header="CheckBox">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox x:Name="CheckBox" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="oznakaChecked"></CheckBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                         </DataGridTemplateColumn>
+                        <DataGridHyperlinkColumn x:Name="HyperLink" Header="Name" Width="200" Binding="{Binding Name}">
+                            <DataGridHyperlinkColumn.ElementStyle>
+                                <Style>
+                                    <EventSetter Event="Hyperlink.Click" Handler="DG_Hyperlink_Click"/>
+                                </Style>
+                            </DataGridHyperlinkColumn.ElementStyle>
+                        </DataGridHyperlinkColumn>
+                        <DataGridTemplateColumn Width="100" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Image}" ></Image>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Date Time" Width="*" Binding="{Binding Time}" IsReadOnly="True"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+        
+
+            </Grid>
+            <!--Buttons add and delete-->
+            <Grid Margin="0 30 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Remove" Content="REMOVE" Margin="80 10 80 0" FontWeight="Bold" Background="#dd1717" FontStyle="Italic" Grid.Column="0" VerticalAlignment="Center" Foreground="White" Click="Remove_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="ADD" Content="ADD" Margin="80 10 80 0" FontWeight="Bold" Background="#0167c1" FontStyle="Italic" Grid.Column="1" VerticalAlignment="Center" Foreground="White" Click="ADD_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Border>
+
+</Window>
